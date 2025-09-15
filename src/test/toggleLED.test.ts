@@ -3,6 +3,7 @@ import { toggleState } from "../toggleLED"
 
 describe("toggle", () => {
     it("returns true if valid index", () => {
+        // Toggle first
         expect(toggleState(1)).toBe(true);
     });
 })
