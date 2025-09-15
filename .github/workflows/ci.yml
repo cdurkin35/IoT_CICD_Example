@@ -3,6 +3,9 @@ name: CI
 on:
   pull_request:
     branches: [main]
+  push:
+    branches: [main]
+
 
 jobs:
   build-and-test:
@@ -20,8 +23,12 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Run ESLint
+        run: npm run lint
+
       - name: Build TypeScript
         run: npm run build
+
 
       - name: Run Tests with Vitest
         run: npm run test
